@@ -1,7 +1,12 @@
 # diarize_srt
 
-By Marc Alier @granludo
+Identifies the diferent sepakers in a recording and labels them on a SRT file.
 
+By Marc Alier @granludo hhtps://wasabi.essi.upc.edu/ludo
+
+# About Diarize SRT 
+
+These scripts are designed to perform speaker diarization on recorded conversations. Speaker diarization is the process of partitioning an audio stream into segments according to which speaker is talking. Once the speakers in a conversation are identified, this set of scripts also incorporates the identified speaker information into an SRT (SubRip Subtitle) file. SRT files are used to provide subtitles or captions along with video or audio files. By using these scripts, you can effectively analyze a recorded conversation, determine who is speaking at what times, and then embed this information into the subtitles of the recording. This is particularly useful for creating more informative and accessible audio-visual content, where it's not just the spoken words that are captioned, but also the information about who is speaking them
 ## TL DR
 
 * This is a small set of python scripts that will allow you to diarize sepakers in a recorded conversation and include the speaker information into a SRT file.
@@ -23,10 +28,8 @@ python3 diarize.py inputfile.wav outputfile.txt
 ``
 python3 diarize_srts.py diarization_file.txt srt_file.srt output_file.srt
 ``
-# About Diarize SRT 
 
-These scripts are designed to perform speaker diarization on recorded conversations. Speaker diarization is the process of partitioning an audio stream into segments according to which speaker is talking. Once the speakers in a conversation are identified, this set of scripts also incorporates the identified speaker information into an SRT (SubRip Subtitle) file. SRT files are used to provide subtitles or captions along with video or audio files. By using these scripts, you can effectively analyze a recorded conversation, determine who is speaking at what times, and then embed this information into the subtitles of the recording. This is particularly useful for creating more informative and accessible audio-visual content, where it's not just the spoken words that are captioned, but also the information about who is speaking them
-
+## Requirements
 
 * We asume you have your audio .wav files and that using OpenAi's "Whisper" or another transcription 
 model or app you have your .srt files.
@@ -103,7 +106,3 @@ a RAG system or something. And you need to keep only the things that ONE speaker
 python3 remove_speakers.py diarization_file.txt srt_file.srt output_file.srt speaker_to_keep
 ``
 
-
-## Dependencies
-
-For the workflow t
