@@ -86,7 +86,7 @@ def main():
     with open(srt_file, 'r') as file:
         srt_data = file.read()
         subtitles = parse_srt(srt_data)
-        print("subtitles loaded:n"+str(len(subtitles))+" lines")
+        print("subtitles loaded:"+str(len(subtitles))+" lines")
     with open(output_file, 'w') as file:
         last_speaker = None
         for subtitle in subtitles:
@@ -95,7 +95,7 @@ def main():
             # print(f"start={start}, end={end}")
             speaker = get_speaker(data_diarization,start,end,last_speaker)
             last_speaker = speaker
-            file.write(f"{subtitle['start']} --> {subtitle['end']} {speaker}\nn\n")           
+            file.write(f"{subtitle['start']} --> {subtitle['end']} {speaker}\n{subtitle['text']}\n\n")           
     print("Done")        
 if __name__ == "__main__":
     main()

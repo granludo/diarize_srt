@@ -105,7 +105,7 @@ def main():
             #    print(f"Sepaker found ={speaker}")
                 if speaker==speaker_to_keep :
                     lines_kept+=1
-                    file.write(f"{subtitle['start']} --> {subtitle['end']} {speaker}\nn\n")
+                    file.write(f"{subtitle['start']} --> {subtitle['end']} {speaker}\n{subtitle['text']}\n\n")
                 else :
                     print(f"REMOVED SPEAKER: {speaker} for subtitle: {subtitle['start']}   ")
             else :

@@ -33,3 +33,4 @@ for file in "$source_dir"/*.wav; do
     # Execute the Python script
     python diarize.py "$file" "$destination_file"
 done
+
