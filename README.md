@@ -87,6 +87,12 @@ start=53.6s stop=72.3s speaker_SPEAKER_05
 start=72.9s stop=73.8s speaker_SPEAKER_05
 ``
 
+For batch operations you can do
+``
+bash diarize.sh origin_directory output_directory
+``
+And go grab a cofee.
+
 Now using a text editor and a nice search and replace you can replace "speaker_SPEAKER_01" for "Speaker Name Here".
 
 ### Apply diarization to SRT files
