@@ -95,6 +95,7 @@ def main():
         print("subtitles loaded:n"+str(len(subtitles))+" lines")
     with open(output_file, 'w') as file:
         last_speaker = speaker_to_keep
+        i=1
         for subtitle in subtitles:
             start = subtitle['start']
             end = subtitle['end']
@@ -105,7 +106,8 @@ def main():
             #    print(f"Sepaker found ={speaker}")
                 if speaker==speaker_to_keep :
                     lines_kept+=1
-                    file.write(f"{subtitle['start']} --> {subtitle['end']} {speaker}\n{subtitle['text']}\n\n")
+                    file.write(f"{i}\n{subtitle['start']} --> {subtitle['end']} {speaker}\n{subtitle['text']}\n\n")
+                    i+=1
                 else :
                     print(f"REMOVED SPEAKER: {speaker} for subtitle: {subtitle['start']}   ")
             else :

@@ -89,13 +89,15 @@ def main():
         print("subtitles loaded:"+str(len(subtitles))+" lines")
     with open(output_file, 'w') as file:
         last_speaker = None
+        i=1
         for subtitle in subtitles:
             start = subtitle['start']
             end = subtitle['end']
             # print(f"start={start}, end={end}")
             speaker = get_speaker(data_diarization,start,end,last_speaker)
             last_speaker = speaker
-            file.write(f"{subtitle['start']} --> {subtitle['end']} {speaker}\n{subtitle['text']}\n\n")           
+            file.write(f"{i}\n{subtitle['start']} --> {subtitle['end']} {speaker}\n{subtitle['text']}\n\n")           
+            i+=1
     print("Done")        
 if __name__ == "__main__":
     main()
